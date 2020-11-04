@@ -1,13 +1,10 @@
 package cn.onekit.thekit;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class JSON {
-
+/*
     public static JSONObject dict2json(Map<String, String> dict) {
         JSONObject json = new JSONObject();
         for(Map.Entry<String,String> entry: dict.entrySet()){
@@ -35,5 +32,5 @@ public class JSON {
             }
         }
         return json;
-    }
+    }*/
 }
