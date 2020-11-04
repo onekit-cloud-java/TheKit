@@ -6,7 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TheKit {
+public class JSON {
 
     public static JSONObject dict2json(Map<String, String> dict) {
         JSONObject json = new JSONObject();
