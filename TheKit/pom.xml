@@ -6,7 +6,7 @@
 
     <groupId>cn.onekit.x2x.cloud</groupId>
     <artifactId>thekit</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <dependencies>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
