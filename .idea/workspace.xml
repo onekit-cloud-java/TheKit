@@ -23,6 +23,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ToutiaoSDK" />
@@ -54,7 +55,7 @@
       <workItem from="1604466300569" duration="6179000" />
       <workItem from="1604505934144" duration="15000" />
       <workItem from="1604547169080" duration="318000" />
-      <workItem from="1604594653641" duration="361000" />
+      <workItem from="1604594653641" duration="2300000" />
     </task>
     <servers />
   </component>
