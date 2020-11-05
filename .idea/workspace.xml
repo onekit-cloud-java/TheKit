@@ -15,6 +15,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1joK4U4AUulEY4tNtvfJSckG3dM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,6 +36,18 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\GIT\github.com(cloud-java)\TheKit\TheKit\src\main\java" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
