@@ -6,10 +6,19 @@
 
     <groupId>cn.onekit.x2x.cloud</groupId>
     <artifactId>thekit</artifactId>
-    <version>1.1.1</version>
-    <name>TheKit</name>
-    <url>https://github.com/onekit-cloud-java/thekit</url>
-    <description>x2x cloud toolkit</description>
+    <version>1.0.5-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
