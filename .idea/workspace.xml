@@ -37,18 +37,6 @@
       <recent name="C:\GIT\github.com(cloud-java)\TheKit\TheKit\src\main\java" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -66,6 +54,7 @@
       <workItem from="1604466300569" duration="6179000" />
       <workItem from="1604505934144" duration="15000" />
       <workItem from="1604547169080" duration="318000" />
+      <workItem from="1604594653641" duration="361000" />
     </task>
     <servers />
   </component>
