@@ -1,9 +1,6 @@
 package cn.onekit.thekit;
 
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.methods.*;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -19,6 +16,16 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class AJAX {
+    public static Map<String,String> headers;
+    private static void setHeaders(HttpRequestBase request) {
+        if (headers == null) {
+            return;
+        }
+        for (Entry<String, String> header : headers.entrySet()) {
+            request.addHeader(header.getKey(), header.getValue());
+        }
+        headers = null;
+    }
     /*
         public static String requestString(HttpServletRequest request) throws Exception {
             StringBuilder buffer = new StringBuilder();
@@ -83,7 +90,7 @@ public class AJAX {
             default:
                 throw new Exception(method);
         }
-
+        setHeaders(request);
         CloseableHttpResponse response = httpClient.execute(request);
         return EntityUtils.toString(response.getEntity(), "utf-8");
     }
@@ -128,6 +135,7 @@ public class AJAX {
             default:
                 throw new Exception(method);
         }
+        setHeaders(request);
         CloseableHttpResponse response = httpClient.execute(request);
         return EntityUtils.toString(response.getEntity(), "utf-8");
     }
@@ -155,6 +163,7 @@ public class AJAX {
             default:
                 throw new Exception(method);
         }
+        setHeaders(request);
         CloseableHttpResponse response = httpClient.execute(request);
         return EntityUtils.toByteArray(response.getEntity());
     }
