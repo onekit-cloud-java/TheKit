@@ -2,6 +2,8 @@ package cn.onekit.thekit;
 
 import org.apache.http.client.methods.*;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.entity.ByteArrayEntity;
+import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -140,6 +142,18 @@ public class AJAX {
         return EntityUtils.toString(response.getEntity(), "utf-8");
     }
 
+    public static String upload(String url,  byte[] data,String contentType) throws Exception {
+
+        CloseableHttpClient
+                httpClient = HttpClients.createDefault();
+
+                HttpPost httpPost = new HttpPost(url);
+        httpPost.setEntity(new ByteArrayEntity(data, ContentType.create(contentType)));
+
+        setHeaders(httpPost);
+        CloseableHttpResponse response = httpClient.execute(httpPost);
+        return EntityUtils.toString(response.getEntity(), "utf-8");
+    }
     public static byte[] download(String url, String method, String data) throws Exception {
         CloseableHttpClient httpClient = HttpClients.createDefault();
 
