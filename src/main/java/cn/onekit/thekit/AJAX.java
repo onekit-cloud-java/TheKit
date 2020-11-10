@@ -149,7 +149,7 @@ public class AJAX {
 
                 HttpPost httpPost = new HttpPost(url);
         httpPost.setEntity(new ByteArrayEntity(data, ContentType.create(contentType)));
-
+        httpPost.addHeader("Content-Type", "application/octet-stream");
         setHeaders(httpPost);
         CloseableHttpResponse response = httpClient.execute(httpPost);
         return EntityUtils.toString(response.getEntity(), "utf-8");
