@@ -24,12 +24,12 @@ public class SIGN {
     public String sign(String data) throws Exception {
         return sign(null,data);
     }
-    public String sign(String key, String data) throws Exception {
+    public String sign(String salt, String data) throws Exception {
         if(method==Method.SHA1){
             return DigestUtils.sha1Hex(data.getBytes(StandardCharsets.UTF_8));
         }
         Mac mac = Mac.getInstance(method.toString());
-        byte[] secretByte = key.getBytes(StandardCharsets.UTF_8);
+        byte[] secretByte = salt.getBytes(StandardCharsets.UTF_8);
         SecretKey secret = new SecretKeySpec(secretByte, method.toString());
         mac.init(secret);
         byte[] dataBytes = data.getBytes(StandardCharsets.UTF_8);
