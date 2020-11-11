@@ -39,6 +39,6 @@ public class SIGN {
     }
 
     public boolean check(String signature, String key, String data) throws Exception {
-        return check(signature, key, data);
+        return sign( key, data).equals(signature);
     }
 }
