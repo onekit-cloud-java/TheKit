@@ -1,34 +1,99 @@
 package cn.onekit.thekit;
 
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.Hex;
 
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
+import java.security.AlgorithmParameters;
+import java.security.NoSuchAlgorithmException;
+import java.security.Security;
 
-public class Crypto {
-    public enum Method{
-        HMACSHA256
-    }
-    private final Method method;
+public class CRYPTO {
 
-    public Crypto(Method method) {
-        this.method = method;
-    }
-
-    public String encode(String key, String data, String iv) throws Exception {
-        Mac mac = Mac.getInstance(method.toString());
-        byte[] secretByte = key.getBytes(StandardCharsets.UTF_8);
-        SecretKey secret = new SecretKeySpec(secretByte, method.toString());
-        mac.init(secret);
-        byte[] dataBytes = data.getBytes(StandardCharsets.UTF_8);
-        byte[] doFinal = mac.doFinal(dataBytes);
-        byte[] hexB = new Hex().encode(doFinal);
-        return new String(hexB);
+    public enum Key {
+        AES
     }
 
-    public String encode(String key, String data) throws Exception {
-        return encode(key, data, null);
+    public enum Mode {
+        PKCS5("AES/CBC/PKCS5Padding"),
+        PKCS7("AES/ECB/PKCS7Padding");
+
+        private String mode;
+
+        Mode(String mode) {
+            this.mode = mode;
+        }
+
+        public String toString() {
+            return mode;
+        }
+    }
+    /////////////////////////
+
+    private final Key key;
+    private final Mode mode;
+    private final int level;
+
+    public CRYPTO(Key key, Mode mode, int level) throws NoSuchAlgorithmException {
+        this.key = key;
+        this.mode = mode;
+        this.level = level;
+        Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
+        KeyGenerator.getInstance(key.toString()).init(level);
+    }
+
+    public AlgorithmParameters initIV(byte[] iv) throws Exception {
+        AlgorithmParameters params = AlgorithmParameters.getInstance(key.toString());
+        params.init(new IvParameterSpec(iv));
+        return params;
+    }
+
+    public String generateKey() throws Exception {
+        KeyGenerator keyGenerator = KeyGenerator.getInstance(key.toString());
+        SecretKey secretKey = keyGenerator.generateKey();
+        return Base64.encodeBase64String(secretKey.getEncoded());
+    }
+
+    ///////////////////
+
+    public byte[] encrypt(byte[] data, byte[] keyBytes, byte[] iv)
+            throws Exception {
+        Cipher cipher = Cipher.getInstance(mode.toString());
+        SecretKeySpec skeySpec = new SecretKeySpec(keyBytes, key.toString());
+        cipher.init(Cipher.ENCRYPT_MODE, skeySpec, initIV(iv));
+        return cipher.doFinal(data);
+    }
+
+    public String encrypt(String data, String sKey, String iv) throws Exception {
+
+        byte[] sSrc64 = data.getBytes("utf-8");
+        byte[] key64 = Base64.decodeBase64(sKey);
+        byte[] iv64 = Base64.decodeBase64(iv);
+
+        return Base64.encodeBase64String(encrypt(sSrc64, key64, iv64));
+    }
+
+    public byte[] decrypt(byte[] encryptedData, byte[] keyBytes,byte[] iv)
+            throws Exception {
+        SecretKeySpec secretKeySpec = new SecretKeySpec(keyBytes, key.toString());
+        Cipher cipher = Cipher.getInstance(mode.toString());
+        cipher.init(Cipher.DECRYPT_MODE, secretKeySpec,initIV(iv));
+        return cipher.doFinal(encryptedData);
+    }
+
+    public String decrypt(String encryptedData, String iv, String key) throws Exception {
+
+        byte[] encrypted64 = Base64.decodeBase64(encryptedData);
+        byte[] key64 = Base64.decodeBase64(key);
+        byte[] iv64 = Base64.decodeBase64(iv);
+
+        byte[] data = decrypt(encrypted64, key64, iv64);
+        return new String(data, "UTF-8");
     }
 }

@@ -31,9 +31,12 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="proofread" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.onekit.thekit" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\GIT\github.com(cloud-java)\TheKit\TheKit\src\main\java" />
     </key>
@@ -60,6 +63,8 @@
       <workItem from="1604670728053" duration="1143000" />
       <workItem from="1604984302242" duration="637000" />
       <workItem from="1604985538089" duration="21000" />
+      <workItem from="1605063140282" duration="7004000" />
+      <workItem from="1605074213681" duration="1106000" />
     </task>
     <servers />
   </component>
@@ -80,9 +85,25 @@
     </state>
     <state x="1073" y="405" key="FileChooserDialogImpl/0.0.3000.1694@0.0.3000.1694" timestamp="1604547273294" />
     <state x="1099" y="448" key="FileChooserDialogImpl/0.0.3072.1874@0.0.3072.1874" timestamp="1604477468741" />
-    <state x="541" y="202" key="SettingsEditor" timestamp="1604465217597">
+    <state width="3072" height="487" key="GridCell.Tab.0.bottom" timestamp="1605073520183">
       <screen x="0" y="0" width="3072" height="1874" />
     </state>
-    <state x="541" y="202" key="SettingsEditor/0.0.3072.1874@0.0.3072.1874" timestamp="1604465217597" />
+    <state width="3072" height="487" key="GridCell.Tab.0.bottom/0.0.3072.1874@0.0.3072.1874" timestamp="1605073520183" />
+    <state width="3072" height="487" key="GridCell.Tab.0.center" timestamp="1605073520183">
+      <screen x="0" y="0" width="3072" height="1874" />
+    </state>
+    <state width="3072" height="487" key="GridCell.Tab.0.center/0.0.3072.1874@0.0.3072.1874" timestamp="1605073520183" />
+    <state width="3072" height="487" key="GridCell.Tab.0.left" timestamp="1605073520182">
+      <screen x="0" y="0" width="3072" height="1874" />
+    </state>
+    <state width="3072" height="487" key="GridCell.Tab.0.left/0.0.3072.1874@0.0.3072.1874" timestamp="1605073520182" />
+    <state width="3072" height="487" key="GridCell.Tab.0.right" timestamp="1605073520183">
+      <screen x="0" y="0" width="3072" height="1874" />
+    </state>
+    <state width="3072" height="487" key="GridCell.Tab.0.right/0.0.3072.1874@0.0.3072.1874" timestamp="1605073520183" />
+    <state x="541" y="202" key="SettingsEditor" timestamp="1605071200959">
+      <screen x="0" y="0" width="3072" height="1874" />
+    </state>
+    <state x="541" y="202" key="SettingsEditor/0.0.3072.1874@0.0.3072.1874" timestamp="1605071200959" />
   </component>
 </project>
