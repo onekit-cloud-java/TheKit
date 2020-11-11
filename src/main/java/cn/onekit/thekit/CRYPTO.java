@@ -38,12 +38,10 @@ public class CRYPTO {
 
     private final Key key;
     private final Mode mode;
-    private final int level;
 
     public CRYPTO(Key key, Mode mode, int level) throws NoSuchAlgorithmException {
         this.key = key;
         this.mode = mode;
-        this.level = level;
         Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
         KeyGenerator.getInstance(key.toString()).init(level);
     }
