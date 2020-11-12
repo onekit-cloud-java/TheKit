@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f31321f5-03a6-4c6f-9717-02ea29f15a84" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,13 +16,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="ProjectId" id="1joK4U4AUulEY4tNtvfJSckG3dM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -52,18 +44,6 @@
       <recent name="C:\GIT\github.com(cloud-java)\TheKit\TheKit\src\main\java" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -90,24 +70,25 @@
       <workItem from="1605074213681" duration="1106000" />
       <workItem from="1605078763269" duration="270000" />
       <workItem from="1605088693516" duration="404000" />
+      <workItem from="1605183426892" duration="225000" />
+      <workItem from="1605183913680" duration="33000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="87" key="#Project_Structure" timestamp="1604465110014">
@@ -123,22 +104,22 @@
     </state>
     <state x="1073" y="405" key="FileChooserDialogImpl/0.0.3000.1694@0.0.3000.1694" timestamp="1604547273294" />
     <state x="1099" y="448" key="FileChooserDialogImpl/0.0.3072.1874@0.0.3072.1874" timestamp="1604477468741" />
-    <state width="3072" height="487" key="GridCell.Tab.0.bottom" timestamp="1605073520183">
+    <state width="3072" height="486" key="GridCell.Tab.0.bottom" timestamp="1605183651712">
       <screen x="0" y="0" width="3072" height="1874" />
     </state>
-    <state width="3072" height="487" key="GridCell.Tab.0.bottom/0.0.3072.1874@0.0.3072.1874" timestamp="1605073520183" />
-    <state width="3072" height="487" key="GridCell.Tab.0.center" timestamp="1605073520183">
+    <state width="3072" height="486" key="GridCell.Tab.0.bottom/0.0.3072.1874@0.0.3072.1874" timestamp="1605183651712" />
+    <state width="3072" height="486" key="GridCell.Tab.0.center" timestamp="1605183651712">
       <screen x="0" y="0" width="3072" height="1874" />
     </state>
-    <state width="3072" height="487" key="GridCell.Tab.0.center/0.0.3072.1874@0.0.3072.1874" timestamp="1605073520183" />
-    <state width="3072" height="487" key="GridCell.Tab.0.left" timestamp="1605073520182">
+    <state width="3072" height="486" key="GridCell.Tab.0.center/0.0.3072.1874@0.0.3072.1874" timestamp="1605183651712" />
+    <state width="3072" height="486" key="GridCell.Tab.0.left" timestamp="1605183651712">
       <screen x="0" y="0" width="3072" height="1874" />
     </state>
-    <state width="3072" height="487" key="GridCell.Tab.0.left/0.0.3072.1874@0.0.3072.1874" timestamp="1605073520182" />
-    <state width="3072" height="487" key="GridCell.Tab.0.right" timestamp="1605073520183">
+    <state width="3072" height="486" key="GridCell.Tab.0.left/0.0.3072.1874@0.0.3072.1874" timestamp="1605183651712" />
+    <state width="3072" height="486" key="GridCell.Tab.0.right" timestamp="1605183651712">
       <screen x="0" y="0" width="3072" height="1874" />
     </state>
-    <state width="3072" height="487" key="GridCell.Tab.0.right/0.0.3072.1874@0.0.3072.1874" timestamp="1605073520183" />
+    <state width="3072" height="486" key="GridCell.Tab.0.right/0.0.3072.1874@0.0.3072.1874" timestamp="1605183651712" />
     <state x="541" y="202" key="SettingsEditor" timestamp="1605071200959">
       <screen x="0" y="0" width="3072" height="1874" />
     </state>
