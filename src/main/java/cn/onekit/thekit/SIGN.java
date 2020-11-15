@@ -38,7 +38,7 @@ public class SIGN {
         return new String(hexB);
     }
 
-    public boolean check(String signature, String key, String data) throws Exception {
-        return sign( key, data).equals(signature);
+    public boolean check(String signature, String salt, String data) throws Exception {
+        return sign( salt, data).equals(signature);
     }
 }

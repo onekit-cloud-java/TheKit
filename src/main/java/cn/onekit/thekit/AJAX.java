@@ -142,13 +142,13 @@ public class AJAX {
         return EntityUtils.toString(response.getEntity(), "utf-8");
     }
 
-    public static String upload(String url,  byte[] data,String contentType) throws Exception {
+    public static String upload(String url,  byte[] data) throws Exception {
 
         CloseableHttpClient
                 httpClient = HttpClients.createDefault();
 
                 HttpPost httpPost = new HttpPost(url);
-        httpPost.setEntity(new ByteArrayEntity(data, ContentType.create(contentType)));
+        httpPost.setEntity(new ByteArrayEntity(data));
         httpPost.addHeader("Content-Type", "application/octet-stream");
         setHeaders(httpPost);
         CloseableHttpResponse response = httpClient.execute(httpPost);
