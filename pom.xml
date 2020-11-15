@@ -6,7 +6,7 @@
 
     <groupId>cn.onekit.x2x.cloud</groupId>
     <artifactId>thekit</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <name>TheKit</name>
     <url>https://github.com/onekit-cloud-java/thekit</url>
     <description>Java Project Toolkit</description>

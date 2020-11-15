@@ -16,7 +16,7 @@ public class DB {
         db = (JsonObject) JSON.parse(FILE.readString(path));
         return db.get(key).getAsString();
     }
-    public static  void save(String table,String key,String value){
+    public static  void set(String table,String key,String value){
         String path = _path(table);
         JsonObject db;
         if(new File(path).exists()){
