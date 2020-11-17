@@ -6,7 +6,7 @@
 
     <groupId>cn.onekit.x2x.cloud</groupId>
     <artifactId>thekit</artifactId>
-    <version>2.1.2</version>
+    <version>3.0.0</version>
     <name>TheKit</name>
     <url>https://github.com/onekit-cloud-java/thekit</url>
     <description>Java Project Toolkit</description>
@@ -162,17 +162,7 @@ mvn clean deploy -P release
                     <version>2.5.1</version>
                 </plugin>
             </plugins>
-            <pluginManagement>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <configuration>
-                            <skip>true</skip>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </pluginManagement>
+
         </build>
         <distributionManagement>
             <snapshotRepository>

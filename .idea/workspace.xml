@@ -24,6 +24,11 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="release" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1joK4U4AUulEY4tNtvfJSckG3dM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -37,7 +42,7 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Toutiao" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -99,6 +104,11 @@
       <workItem from="1605584951952" duration="70000" />
       <workItem from="1605594336753" duration="72000" />
       <workItem from="1605600671518" duration="166000" />
+      <workItem from="1605604553578" duration="70000" />
+      <workItem from="1605604737625" duration="1424000" />
+      <workItem from="1605606647834" duration="681000" />
+      <workItem from="1605607371115" duration="273000" />
+      <workItem from="1605608105520" duration="463000" />
     </task>
     <servers />
   </component>
