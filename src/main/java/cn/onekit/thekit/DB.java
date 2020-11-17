@@ -14,7 +14,7 @@ public class DB {
             return null;
         }
         db = (JsonObject) JSON.parse(FILE.readString(path));
-        return db.get(key).getAsString();
+        return db.has(key) ? db.get(key).getAsString() : null;
     }
     public static  void set(String table,String key,String value){
         String path = _path(table);

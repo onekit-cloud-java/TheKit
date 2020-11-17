@@ -103,12 +103,7 @@ dist
 # TernJS port file
 .tern-port
 target
-.idea/misc.xml
-.idea/TheKit.iml
-.idea/workspace.xml
-.idea/workspace.xml
-.idea/workspace.xml
-.idea/workspace.xml
-.idea/workspace.xml
-.idea/workspace.xml
-.idea/workspace.xml
+target/
+.idea
+.idea/
+
