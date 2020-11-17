@@ -14,7 +14,7 @@ public class FILE {
             if (!f.exists()) {
                 f.createNewFile();
             }
-            fw = new FileWriter(f.getAbsoluteFile(), true);
+            fw = new FileWriter(f.getAbsoluteFile(), false);
             bw = new BufferedWriter(fw);
             bw.write(str);
             bw.close();
