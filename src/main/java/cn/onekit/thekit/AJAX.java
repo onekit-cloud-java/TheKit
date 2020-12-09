@@ -18,7 +18,8 @@ import java.util.Map.Entry;
 
 @SuppressWarnings("unused")
 public class AJAX {
-    private static Map<String,String> headers;
+    @SuppressWarnings("WeakerAccess")
+    public static Map<String,String> headers;
     private static void _setHeaders(HttpRequestBase requestBase) {
         if (headers == null) {
             return;
