@@ -8,6 +8,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class SIGN {
 
     public enum Method {

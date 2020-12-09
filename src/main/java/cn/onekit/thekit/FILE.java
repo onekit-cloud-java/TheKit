@@ -2,11 +2,12 @@ package cn.onekit.thekit;
 
 import java.io.*;
 
+@SuppressWarnings({"WeakerAccess", "UnusedReturnValue", "ResultOfMethodCallIgnored"})
 public class FILE {
     public static boolean writeString(String path, String str) {
         File f = new File(path);
 
-        FileWriter fw = null;
+        FileWriter fw;
         BufferedWriter bw = null;
         try {
 
@@ -36,7 +37,7 @@ public class FILE {
     public static String readString(String path) {
         File file = new File(path);
         BufferedReader reader = null;
-        StringBuffer sbf = new StringBuffer();
+        StringBuilder sbf = new StringBuilder();
         try {
             reader = new BufferedReader(new FileReader(file));
             String tempStr;

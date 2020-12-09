@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
+@SuppressWarnings({"WeakerAccess", "unused"})
 public class JSON {
 
     public static JsonElement parse(String str) {

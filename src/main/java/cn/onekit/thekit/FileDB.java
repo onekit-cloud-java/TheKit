@@ -4,14 +4,21 @@ import com.google.gson.JsonObject;
 import java.io.File;
 import java.util.Date;
 
+@SuppressWarnings("unused")
 public class FileDB {
-    public static class Data{
-        String value;
-        long time;
+
+    public  static  class Data{
+        @SuppressWarnings("WeakerAccess")
+        public String value;
+        @SuppressWarnings("WeakerAccess")
+        public long time;
     }
-    private static String _path(String table){
+
+    private static  String _path(String table){
         return String.format("%s/%s.json",System.getProperties().getProperty("user.home"),table);
     }
+
+
     public static Data get(String table,String key) {
         String path = _path(table);
         JsonObject db;
@@ -28,6 +35,7 @@ public class FileDB {
         data.time = json.get("time").getAsLong();
         return data;
     }
+
     public static  void set(String table,String key,String value){
         String path = _path(table);
         JsonObject db;

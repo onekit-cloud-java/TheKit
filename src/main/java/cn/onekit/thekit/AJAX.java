@@ -3,7 +3,6 @@ package cn.onekit.thekit;
 import org.apache.http.client.methods.*;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.entity.ByteArrayEntity;
-import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -17,8 +16,9 @@ import java.security.KeyStore;
 import java.util.Map;
 import java.util.Map.Entry;
 
+@SuppressWarnings({"unused", "DuplicatedCode"})
 public class AJAX {
-    public static Map<String,String> headers;
+    private static Map<String,String> headers;
     private static void setHeaders(HttpRequestBase request) {
         if (headers == null) {
             return;
@@ -48,6 +48,7 @@ public class AJAX {
             return result;
         }
     */
+    @SuppressWarnings("WeakerAccess")
     public static String request(String url, String method, String data, String mchId, String sslp12_path)
             throws Exception {
         CloseableHttpClient httpClient;
@@ -86,8 +87,7 @@ public class AJAX {
                 request = httpPost;
                 break;
             case "GET":
-                HttpGet httpGet = new HttpGet(url);
-                request = httpGet;
+                request = new HttpGet(url);
                 break;
             default:
                 throw new Exception(method);
@@ -131,8 +131,7 @@ public class AJAX {
                 if (data.length() > 0) {
                     url += "?" + data.toString();
                 }
-                HttpGet httpGet = new HttpGet(url);
-                request = httpGet;
+                request = new HttpGet(url);
                 break;
             default:
                 throw new Exception(method);
@@ -159,7 +158,7 @@ public class AJAX {
 
 
         ////////////////////////////////
-        HttpRequestBase request;
+        HttpRequestBase download;
         switch (method.toUpperCase()) {
             case "POST":
                 HttpPost httpPost = new HttpPost(url);
@@ -168,17 +167,16 @@ public class AJAX {
                     httpPost.setEntity(entity);
                     httpPost.addHeader("Content-Type", "application/json; charset=\"utf-8\"");
                 }
-                request = httpPost;
+                download = httpPost;
                 break;
             case "GET":
-                HttpGet httpGet = new HttpGet(url);
-                request = httpGet;
+                download = new HttpGet(url);
                 break;
             default:
                 throw new Exception(method);
         }
-        setHeaders(request);
-        CloseableHttpResponse response = httpClient.execute(request);
+        setHeaders(download);
+        CloseableHttpResponse response = httpClient.execute(download);
         return EntityUtils.toByteArray(response.getEntity());
     }
 }

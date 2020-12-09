@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("unused")
 public class MAP {
     public static Map<String,String> object2map(Object obj) throws IllegalAccessException {
         Map<String, String> result = new HashMap<>();

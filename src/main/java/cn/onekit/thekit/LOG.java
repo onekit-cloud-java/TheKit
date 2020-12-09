@@ -1,8 +1,9 @@
 package cn.onekit.thekit;
 
+@SuppressWarnings("unused")
 public class LOG {
     public static String printStackTrace(Exception e) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append("{error:\"");
         sb.append(e.getMessage());
         for (StackTraceElement ste : e.getStackTrace()) {
