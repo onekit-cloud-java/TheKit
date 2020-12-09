@@ -42,7 +42,7 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Toutiao" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -110,7 +110,9 @@
       <workItem from="1605607371115" duration="273000" />
       <workItem from="1605608105520" duration="463000" />
       <workItem from="1607076347977" duration="874000" />
-      <workItem from="1607482757505" duration="12428000" />
+      <workItem from="1607482757505" duration="12483000" />
+      <workItem from="1607496110160" duration="131000" />
+      <workItem from="1607496390378" duration="2796000" />
     </task>
     <servers />
   </component>

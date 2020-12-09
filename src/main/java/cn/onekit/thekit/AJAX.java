@@ -16,38 +16,18 @@ import java.security.KeyStore;
 import java.util.Map;
 import java.util.Map.Entry;
 
-@SuppressWarnings({"unused", "DuplicatedCode"})
+@SuppressWarnings("unused")
 public class AJAX {
     private static Map<String,String> headers;
-    private static void setHeaders(HttpRequestBase request) {
+    private static void _setHeaders(HttpRequestBase requestBase) {
         if (headers == null) {
             return;
         }
         for (Entry<String, String> header : headers.entrySet()) {
-            request.addHeader(header.getKey(), header.getValue());
+            requestBase.addHeader(header.getKey(), header.getValue());
         }
         headers = null;
     }
-    /*
-        public static String requestString(HttpServletRequest request) throws Exception {
-            StringBuilder buffer = new StringBuilder();
-            BufferedReader reader = request.getReader();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                buffer.append(line);
-            }
-            return buffer.toString();
-        }
-
-        public static Map<String, String> requestMap(HttpServletRequest request) throws Exception {
-            Map<String, String> result = new HashMap<String, String>();
-            Map<String, String[]> map = request.getParameterMap();
-            for (Entry<String, String[]> entry : map.entrySet()) {
-                result.put(entry.getKey(), entry.getValue()[0]);
-            }
-            return result;
-        }
-    */
     @SuppressWarnings("WeakerAccess")
     public static String request(String url, String method, String data, String mchId, String sslp12_path)
             throws Exception {
@@ -75,26 +55,32 @@ public class AJAX {
         }
 
         ////////////////////////////////
-        HttpRequestBase request;
+        HttpRequestBase request = _initRequest(url,method,data);
+        CloseableHttpResponse response = httpClient.execute(request);
+        return EntityUtils.toString(response.getEntity(), "utf-8");
+    }
+
+    private static HttpRequestBase _initRequest(String url,String method,String data) throws Exception {
+        HttpRequestBase requestBase;
         switch (method.toUpperCase()) {
             case "POST":
                 HttpPost httpPost = new HttpPost(url);
-                if (data != null) {
-                    StringEntity entity = new StringEntity(data, "utf-8");
-                    httpPost.setEntity(entity);
-                    httpPost.addHeader("Content-Type", "application/json; charset=\"utf-8\"");
-                }
-                request = httpPost;
+                StringEntity entity = new StringEntity(data, "utf-8");
+                httpPost.setEntity(entity);
+                httpPost.addHeader("Content-Type", "application/x-www-form-urlencoded;charset=\"utf-8\"");
+                requestBase = httpPost;
                 break;
             case "GET":
-                request = new HttpGet(url);
+                if (data.length() > 0) {
+                    url += "?" + data;
+                }
+                requestBase = new HttpGet(url);
                 break;
             default:
                 throw new Exception(method);
         }
-        setHeaders(request);
-        CloseableHttpResponse response = httpClient.execute(request);
-        return EntityUtils.toString(response.getEntity(), "utf-8");
+        _setHeaders(requestBase);
+        return requestBase;
     }
 
     public static String request(String url, String method, String data) throws Exception {
@@ -118,25 +104,8 @@ public class AJAX {
         }
         CloseableHttpClient
                 httpClient = HttpClients.createDefault();
-        HttpRequestBase request;
-        switch (method.toUpperCase()) {
-            case "POST":
-                HttpPost httpPost = new HttpPost(url);
-                StringEntity entity = new StringEntity(data.toString(), "utf-8");
-                httpPost.setEntity(entity);
-                httpPost.addHeader("Content-Type", "application/x-www-form-urlencoded;charset=\"utf-8\"");
-                request = httpPost;
-                break;
-            case "GET":
-                if (data.length() > 0) {
-                    url += "?" + data.toString();
-                }
-                request = new HttpGet(url);
-                break;
-            default:
-                throw new Exception(method);
-        }
-        setHeaders(request);
+
+        HttpRequestBase request=_initRequest(url,method,data.toString());
         CloseableHttpResponse response = httpClient.execute(request);
         return EntityUtils.toString(response.getEntity(), "utf-8");
     }
@@ -149,34 +118,18 @@ public class AJAX {
                 HttpPost httpPost = new HttpPost(url);
         httpPost.setEntity(new ByteArrayEntity(data));
         httpPost.addHeader("Content-Type", "application/octet-stream");
-        setHeaders(httpPost);
+        _setHeaders(httpPost);
         CloseableHttpResponse response = httpClient.execute(httpPost);
         return EntityUtils.toString(response.getEntity(), "utf-8");
     }
+
     public static byte[] download(String url, String method, String data) throws Exception {
         CloseableHttpClient httpClient = HttpClients.createDefault();
 
 
         ////////////////////////////////
-        HttpRequestBase download;
-        switch (method.toUpperCase()) {
-            case "POST":
-                HttpPost httpPost = new HttpPost(url);
-                if (data != null) {
-                    StringEntity entity = new StringEntity(data, "utf-8");
-                    httpPost.setEntity(entity);
-                    httpPost.addHeader("Content-Type", "application/json; charset=\"utf-8\"");
-                }
-                download = httpPost;
-                break;
-            case "GET":
-                download = new HttpGet(url);
-                break;
-            default:
-                throw new Exception(method);
-        }
-        setHeaders(download);
-        CloseableHttpResponse response = httpClient.execute(download);
+        HttpRequestBase request=_initRequest(url,method,data);
+        CloseableHttpResponse response = httpClient.execute(request);
         return EntityUtils.toByteArray(response.getEntity());
     }
 }

@@ -4,12 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
-@SuppressWarnings({"WeakerAccess", "unused"})
+@SuppressWarnings("unused")
 public class JSON {
 
+    @SuppressWarnings("WeakerAccess")
     public static JsonElement parse(String str) {
         return new JsonParser().parse(str);
     }
+    @SuppressWarnings("WeakerAccess")
     public static String stringify(JsonElement json) {
         return json.toString();
     }

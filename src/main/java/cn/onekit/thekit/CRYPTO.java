@@ -7,6 +7,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
 import java.security.AlgorithmParameters;
 import java.security.NoSuchAlgorithmException;
 import java.security.Security;
@@ -68,10 +69,10 @@ public class CRYPTO {
         return cipher.doFinal(data);
     }
 
-    @SuppressWarnings("CharsetObjectCanBeUsed")
+
     public String encrypt(String data, String sKey, String iv) throws Exception {
 
-        byte[] sSrc64 = data.getBytes("UTF-8");
+        byte[] sSrc64 = data.getBytes(StandardCharsets.UTF_8);
         byte[] key64 = Base64.decodeBase64(sKey);
         byte[] iv64 = Base64.decodeBase64(iv);
 
@@ -87,7 +88,7 @@ public class CRYPTO {
         return cipher.doFinal(encryptedData);
     }
 
-    @SuppressWarnings("CharsetObjectCanBeUsed")
+
     public String decrypt(String encryptedData, String iv, String key) throws Exception {
 
         byte[] encrypted64 = Base64.decodeBase64(encryptedData);
@@ -95,6 +96,6 @@ public class CRYPTO {
         byte[] iv64 = Base64.decodeBase64(iv);
 
         byte[] data = decrypt(encrypted64, key64, iv64);
-        return new String(data, "UTF-8");
+        return new String(data, StandardCharsets.UTF_8);
     }
 }

@@ -2,8 +2,10 @@ package cn.onekit.thekit;
 
 import java.io.*;
 
-@SuppressWarnings({"WeakerAccess", "UnusedReturnValue", "ResultOfMethodCallIgnored"})
+@SuppressWarnings("WeakerAccess")
 public class FILE {
+
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean writeString(String path, String str) {
         File f = new File(path);
 
@@ -13,6 +15,7 @@ public class FILE {
 
 
             if (!f.exists()) {
+                //noinspection ResultOfMethodCallIgnored
                 f.createNewFile();
             }
             fw = new FileWriter(f.getAbsoluteFile(), false);

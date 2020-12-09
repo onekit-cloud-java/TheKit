@@ -8,7 +8,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 
-@SuppressWarnings({"unused", "WeakerAccess"})
+@SuppressWarnings("unused")
 public class SIGN {
 
     public enum Method {
@@ -25,6 +25,7 @@ public class SIGN {
     public String sign(String data) throws Exception {
         return sign(null,data);
     }
+    @SuppressWarnings("WeakerAccess")
     public String sign(String salt, String data) throws Exception {
         if(method==Method.SHA1){
             return DigestUtils.sha1Hex(data.getBytes(StandardCharsets.UTF_8));
