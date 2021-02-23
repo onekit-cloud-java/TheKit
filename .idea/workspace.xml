@@ -1,106 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="ALL" />
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f31321f5-03a6-4c6f-9717-02ea29f15a84" name="Default Changelist" comment="">
+    <list default="true" id="1f095116-b1e6-453c-918b-5d0f29cb9ffa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1joK4U4AUulEY4tNtvfJSckG3dM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1os5M8Qa5pus8vfeGBV1GXBO6Nc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.onekit.thekit" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\GIT\github.com(cloud-java)\TheKit\TheKit\src\main\java" />
+      <recent name="E:\GIT\github.com(cloud-java)\TheKit" />
+      <recent name="E:\GIT\github.com(cloud-java)\TheKit\src\main\java\cn\onekit\thekit" />
     </key>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="RunManager">
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="demo.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f31321f5-03a6-4c6f-9717-02ea29f15a84" name="Default Changelist" comment="" />
-      <created>1604464812040</created>
+      <changelist id="1f095116-b1e6-453c-918b-5d0f29cb9ffa" name="Default Changelist" comment="" />
+      <created>1614062406354</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1604464812040</updated>
-      <workItem from="1604464813705" duration="538000" />
-      <workItem from="1604465371510" duration="396000" />
-      <workItem from="1604465992614" duration="57000" />
-      <workItem from="1604466076754" duration="16000" />
-      <workItem from="1604466300569" duration="6179000" />
-      <workItem from="1604505934144" duration="15000" />
-      <workItem from="1604547169080" duration="318000" />
-      <workItem from="1604594653641" duration="2300000" />
-      <workItem from="1604631633745" duration="3000" />
-      <workItem from="1604670728053" duration="1143000" />
-      <workItem from="1604984302242" duration="637000" />
-      <workItem from="1604985538089" duration="21000" />
-      <workItem from="1605063140282" duration="7004000" />
-      <workItem from="1605074213681" duration="1106000" />
-      <workItem from="1605078763269" duration="270000" />
-      <workItem from="1605088693516" duration="404000" />
-      <workItem from="1605183426892" duration="225000" />
-      <workItem from="1605183913680" duration="33000" />
-      <workItem from="1605250609292" duration="3701000" />
-      <workItem from="1605442298148" duration="198000" />
-      <workItem from="1605442505477" duration="1263000" />
-      <workItem from="1605451505660" duration="158000" />
-      <workItem from="1605584951952" duration="70000" />
-      <workItem from="1605594336753" duration="72000" />
-      <workItem from="1605600671518" duration="166000" />
-      <workItem from="1605604553578" duration="70000" />
-      <workItem from="1605604737625" duration="1424000" />
-      <workItem from="1605606647834" duration="681000" />
-      <workItem from="1605607371115" duration="273000" />
-      <workItem from="1605608105520" duration="463000" />
-      <workItem from="1607076347977" duration="874000" />
-      <workItem from="1607482757505" duration="12483000" />
-      <workItem from="1607496110160" duration="131000" />
-      <workItem from="1607496390378" duration="2796000" />
-      <workItem from="1607499811007" duration="135000" />
-      <workItem from="1612430802367" duration="670000" />
-      <workItem from="1612434313712" duration="2000" />
-      <workItem from="1613635806038" duration="1187000" />
-      <workItem from="1613963114813" duration="12000" />
-      <workItem from="1614061924745" duration="38000" />
-      <workItem from="1614061965301" duration="50000" />
+      <updated>1614062406354</updated>
+      <workItem from="1614062411530" duration="162000" />
     </task>
     <servers />
   </component>
@@ -117,36 +96,19 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="249" y="0" key="#Project_Structure" timestamp="1614062014809">
+    <state x="249" y="0" key="#Project_Structure" timestamp="1614062574628">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="#Project_Structure/0.0.1536.824/-3840.0.2560.1400@0.0.1536.824" timestamp="1614062014809" />
-    <state x="1037" y="561" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605442331918">
-      <screen x="0" y="0" width="3072" height="1694" />
+    <state x="249" y="0" key="#Project_Structure/0.0.1536.824/-3840.0.2560.1400@0.0.1536.824" timestamp="1614062574628" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614062462603">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="1037" y="561" key="#com.intellij.fileTypes.FileTypeChooser/0.0.3072.1694@0.0.3072.1694" timestamp="1605442331918" />
-    <state width="3072" height="405" key="GridCell.Tab.0.bottom" timestamp="1605451686440">
-      <screen x="0" y="0" width="3072" height="1874" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/-3840.0.2560.1400@0.0.1536.824" timestamp="1614062462603" />
+    <state x="178" y="72" key="new project wizard" timestamp="1614062526945">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="3072" height="405" key="GridCell.Tab.0.bottom/0.0.3072.1874@0.0.3072.1874" timestamp="1605451686440" />
-    <state width="3072" height="405" key="GridCell.Tab.0.center" timestamp="1605451686440">
-      <screen x="0" y="0" width="3072" height="1874" />
-    </state>
-    <state width="3072" height="405" key="GridCell.Tab.0.center/0.0.3072.1874@0.0.3072.1874" timestamp="1605451686440" />
-    <state width="3072" height="405" key="GridCell.Tab.0.left" timestamp="1605451686440">
-      <screen x="0" y="0" width="3072" height="1874" />
-    </state>
-    <state width="3072" height="405" key="GridCell.Tab.0.left/0.0.3072.1874@0.0.3072.1874" timestamp="1605451686440" />
-    <state width="3072" height="405" key="GridCell.Tab.0.right" timestamp="1605451686440">
-      <screen x="0" y="0" width="3072" height="1874" />
-    </state>
-    <state width="3072" height="405" key="GridCell.Tab.0.right/0.0.3072.1874@0.0.3072.1874" timestamp="1605451686440" />
-    <state x="973" y="314" width="1126" height="1066" key="find.popup" timestamp="1605442704864">
-      <screen x="0" y="0" width="3072" height="1694" />
-    </state>
-    <state x="973" y="314" width="1126" height="1066" key="find.popup/0.0.3072.1694@0.0.3072.1694" timestamp="1605442704864" />
+    <state x="178" y="72" key="new project wizard/0.0.1536.824/-3840.0.2560.1400@0.0.1536.824" timestamp="1614062526945" />
   </component>
 </project>

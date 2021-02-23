@@ -12,7 +12,7 @@ public class STRING {
         for(Map.Entry<String,Object> entry : args.entrySet()){
             String key = entry.getKey();
             Object value = entry.getValue();
-            String str = String.format("{%s}",key);
+            String str = String.format("\\{%s\\}",key);
             result.replaceAll(str,value!=null?value.toString():"");
         }
         return result;
