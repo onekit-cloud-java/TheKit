@@ -1,14 +1,20 @@
 package cn.onekit.thekit;
 
-import org.apache.http.client.methods.*;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.entity.ByteArrayEntity;
+import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContexts;
 import org.apache.http.util.EntityUtils;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
+
 import javax.net.ssl.SSLContext;
 import java.io.File;
 import java.io.FileInputStream;
@@ -130,13 +136,15 @@ public class AJAX {
     public static String upload(String url,  Map<String,byte[]> files) throws Exception {
 
         MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
+        multipartEntityBuilder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
         for(Map.Entry<String,byte[]> entry : files.entrySet()){
-            multipartEntityBuilder.addBinaryBody(entry.getKey(),entry.getValue());
+           multipartEntityBuilder.addBinaryBody(entry.getKey(),entry.getValue(),ContentType.APPLICATION_OCTET_STREAM,entry.getKey());
         }
+        multipartEntityBuilder.setContentType(ContentType.MULTIPART_FORM_DATA);
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
         httpPost.setEntity(multipartEntityBuilder.build());
-        httpPost.addHeader("Content-Type", "application/octet-stream");
+
         _setHeaders(httpPost);
         CloseableHttpResponse response = httpClient.execute(httpPost);
         return EntityUtils.toString(response.getEntity(), "utf-8");
