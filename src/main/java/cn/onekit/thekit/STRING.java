@@ -13,7 +13,7 @@ public class STRING {
             String key = entry.getKey();
             Object value = entry.getValue();
             String str = String.format("\\{%s\\}",key);
-            result.replaceAll(str,value!=null?value.toString():"");
+            result=result.replaceAll(str,value!=null?value.toString():"");
         }
         return result;
     }

@@ -25,7 +25,11 @@ public class AJAX {
             return;
         }
         for (Entry<String, String> header : headers.entrySet()) {
-            requestBase.addHeader(header.getKey(), header.getValue());
+            String key = header.getKey();
+            if(requestBase.containsHeader(key)){
+                requestBase.removeHeaders(key);
+            }
+            requestBase.addHeader(key, header.getValue());
         }
         headers = null;
     }
