@@ -6,7 +6,7 @@
 
     <groupId>cn.onekit.x2x.cloud</groupId>
     <artifactId>thekit</artifactId>
-    <version>3.3.6</version>
+    <version>3.3.8</version>
     <name>TheKit</name>
     <url>https://github.com/onekit-cloud-java/thekit</url>
     <description>Java Project Toolkit</description>
@@ -29,6 +29,12 @@ mvn clean deploy -P release
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
+            <version>4.5.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
             <version>4.5.6</version>
         </dependency>
 

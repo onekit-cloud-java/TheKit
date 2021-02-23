@@ -8,7 +8,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContexts;
 import org.apache.http.util.EntityUtils;
-
+import org.apache.http.entity.mime.MultipartEntityBuilder;
 import javax.net.ssl.SSLContext;
 import java.io.File;
 import java.io.FileInputStream;
@@ -76,7 +76,7 @@ public class AJAX {
                 requestBase = httpPost;
                 break;
             case "GET":
-                if (data.length() > 0) {
+                if (data!=null && data.length() > 0) {
                     url += "?" + data;
                 }
                 requestBase = new HttpGet(url);
@@ -127,7 +127,20 @@ public class AJAX {
         CloseableHttpResponse response = httpClient.execute(httpPost);
         return EntityUtils.toString(response.getEntity(), "utf-8");
     }
+    public static String upload(String url,  Map<String,byte[]> files) throws Exception {
 
+        MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
+        for(Map.Entry<String,byte[]> entry : files.entrySet()){
+            multipartEntityBuilder.addBinaryBody(entry.getKey(),entry.getValue());
+        }
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpPost httpPost = new HttpPost(url);
+        httpPost.setEntity(multipartEntityBuilder.build());
+        httpPost.addHeader("Content-Type", "application/octet-stream");
+        _setHeaders(httpPost);
+        CloseableHttpResponse response = httpClient.execute(httpPost);
+        return EntityUtils.toString(response.getEntity(), "utf-8");
+    }
     public static byte[] download(String url, String method, String data) throws Exception {
         CloseableHttpClient httpClient = HttpClients.createDefault();
 
