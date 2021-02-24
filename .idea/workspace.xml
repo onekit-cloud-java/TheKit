@@ -21,10 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1f095116-b1e6-453c-918b-5d0f29cb9ffa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/demo/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/demo/demo/DemoApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/onekit/thekit/AJAX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/onekit/thekit/AJAX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/onekit/thekit/JSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/onekit/thekit/JSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/onekit/thekit/SIGN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/onekit/thekit/SIGN.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +93,7 @@
       <workItem from="1614075987543" duration="2934000" />
       <workItem from="1614135169222" duration="1812000" />
       <workItem from="1614148095342" duration="1637000" />
+      <workItem from="1614158531085" duration="852000" />
     </task>
     <servers />
   </component>

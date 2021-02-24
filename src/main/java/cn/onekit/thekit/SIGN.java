@@ -2,6 +2,7 @@ package cn.onekit.thekit;
 
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.tomcat.jni.Error;
 
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
@@ -29,6 +30,14 @@ public class SIGN {
     public String sign(String salt, String data) throws Exception {
         if(method==Method.SHA1){
             return DigestUtils.sha1Hex(data.getBytes(StandardCharsets.UTF_8));
+        }
+        if(salt==null){
+            switch (method){
+                case HMACSHA256:
+                    return DigestUtils.sha256Hex(data);
+                default:
+                    throw new Exception(method.toString());
+            }
         }
         Mac mac = Mac.getInstance(method.toString());
         byte[] secretByte = salt.getBytes(StandardCharsets.UTF_8);
