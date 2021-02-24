@@ -1,9 +1,6 @@
 package cn.onekit.thekit;
 
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.methods.*;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.entity.ContentType;
@@ -86,6 +83,9 @@ public class AJAX {
                     url += "?" + data;
                 }
                 requestBase = new HttpGet(url);
+                break;
+            case "DELETE":
+                requestBase = new HttpDelete(url);
                 break;
             default:
                 throw new Exception(method);
