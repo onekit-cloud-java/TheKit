@@ -3,7 +3,6 @@ package cn.onekit.thekit;
 import com.google.gson.*;
 
 import java.lang.reflect.Type;
-import java.time.LocalDate;
 
 @SuppressWarnings("unused")
 public class JSON {
@@ -12,31 +11,25 @@ public class JSON {
         String serialize();
         E deserialize(String jsonEnum);
 
-    }
-    public static class GsonEnumTypeAdapter<E> implements JsonSerializer<E>, JsonDeserializer<E> {
+        class TypeAdapter<E> implements JsonSerializer<E>, JsonDeserializer<E> {
 
-        private final GsonEnum<E> gsonEnum;
+            private final GsonEnum<E>  gsonEnum;
 
-        public GsonEnumTypeAdapter(GsonEnum<E> gsonEnum) {
-            this.gsonEnum = gsonEnum;
-        }
-
-        @Override
-        public JsonElement serialize(E src, Type typeOfSrc, JsonSerializationContext context) {
-            if (null != src && src instanceof GsonEnum) {
-                return new JsonPrimitive(((GsonEnum) src).serialize());
+        public TypeAdapter(GsonEnum<E> gsonEnum) {
+                this.gsonEnum = gsonEnum;
             }
-            return null;
-        }
 
-        @Override
-        public E deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-            if (null != json) {
-                return gsonEnum.deserialize(json.getAsString());
+            @Override
+            public E deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+
+                    return gsonEnum.deserialize(json.getAsString());
+
             }
-            return null;
+            @Override
+            public JsonElement serialize(E ge, Type type, JsonSerializationContext jsonSerializationContext) {
+                return null;
+            }
         }
-
     }
     @SuppressWarnings("WeakerAccess")
     public static JsonElement parse(String str) {
@@ -47,33 +40,44 @@ public class JSON {
         return json.toString();
     }
     //////////////////////
-    private  static  <E extends GsonEnum> Gson _gson(Class<GsonEnum<E>>... enumClasses){
+    @SafeVarargs
+    private  static  <E,GE extends GsonEnum<E>> Gson _gson(Class<GsonEnum<E>>... enumClasses){
         try {
             GsonBuilder gsonBuilder = new GsonBuilder()
                     .serializeNulls();
-            for (Class<GsonEnum<E>> enumClass : enumClasses) {
-                gsonBuilder.registerTypeAdapter(enumClass, new GsonEnumTypeAdapter<>((E) enumClass.newInstance()));
+
+           for (Class<GsonEnum<E>> enumClass : enumClasses) {
+                gsonBuilder.registerTypeAdapter(enumClass, new GsonEnum.TypeAdapter<>(enumClass.newInstance()));
             }
            return gsonBuilder.create();
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+           throw new Error(e.getMessage());
         }
     }
-    public static <E extends GsonEnum> JsonElement object2json(Object obj,Class<GsonEnum<E>>... enumClasses) {
+    /////////////////////
+    @SafeVarargs
+    public static <E,GE extends GsonEnum<E>> JsonElement object2json(Object obj, Class<GsonEnum<E>>... enumClasses) {
 
             Gson gson = _gson(enumClasses);
             return gson.toJsonTree(obj);
     }
-    public static <T,E extends GsonEnum> T json2object(JsonElement json, Class<T> clazz,Class<GsonEnum<E>>... enumClasses) {
+    //////////////
+    @SafeVarargs
+    public static <T,E,GE extends GsonEnum<E>> T json2object(JsonElement json, Class<T> clazz, Class<GsonEnum<E>>... enumClasses) {
         Gson gson = _gson(enumClasses);
         return gson.fromJson(json, clazz);
     }
     /////////////////////
-    public static String object2string(Object obj) {
-        return new Gson().toJson(obj);
+    @SafeVarargs
+    public static <E,GE extends GsonEnum<E>>  String object2string(Object obj, Class<GsonEnum<E>>... enumClasses) {
+        Gson gson = _gson(enumClasses);
+        return gson.toJson(obj);
     }
-    public static <T> T string2object(String json, Class<T> clazz) {
-        return new Gson().fromJson(json, clazz);
+    //////////////////////
+    @SafeVarargs
+    public static <T,E,GE extends GsonEnum<E>> T string2object(String json, Class<T> clazz, Class<GsonEnum<E>>... enumClasses) {
+        Gson gson = _gson(enumClasses);
+        return gson.fromJson(json, clazz);
     }
 }

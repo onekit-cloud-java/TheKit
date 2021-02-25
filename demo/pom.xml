@@ -31,7 +31,7 @@
         <dependency>
             <groupId>cn.onekit.x2x.cloud</groupId>
             <artifactId>thekit</artifactId>
-            <version>3.3.13</version>
+            <version>3.3.18</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
