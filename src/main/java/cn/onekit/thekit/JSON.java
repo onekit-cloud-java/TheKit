@@ -45,7 +45,8 @@ public class JSON {
         try {
             GsonBuilder gsonBuilder = new GsonBuilder()
                     .disableHtmlEscaping()//.setLenient()
-                    .serializeNulls();
+                    //.serializeNulls()
+            ;
 
            for (Class<GsonEnum<E>> enumClass : enumClasses) {
                 gsonBuilder.registerTypeAdapter(enumClass, new GsonEnum.TypeAdapter<>(enumClass.newInstance()));

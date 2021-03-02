@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f095116-b1e6-453c-918b-5d0f29cb9ffa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/onekit/thekit/JSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/onekit/thekit/JSON.java" afterDir="false" />
@@ -110,6 +111,7 @@
       <workItem from="1614233063800" duration="9069000" />
       <workItem from="1614243849146" duration="488000" />
       <workItem from="1614653058709" duration="1244000" />
+      <workItem from="1614682940032" duration="648000" />
     </task>
     <servers />
   </component>
