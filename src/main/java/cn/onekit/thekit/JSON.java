@@ -44,6 +44,7 @@ public class JSON {
     private  static  <E,GE extends GsonEnum<E>> Gson _gson(Class<GsonEnum<E>>... enumClasses){
         try {
             GsonBuilder gsonBuilder = new GsonBuilder()
+                    .disableHtmlEscaping()//.setLenient()
                     .serializeNulls();
 
            for (Class<GsonEnum<E>> enumClass : enumClasses) {
