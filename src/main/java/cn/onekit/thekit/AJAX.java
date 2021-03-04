@@ -13,14 +13,26 @@ import org.apache.http.ssl.SSLContexts;
 import org.apache.http.util.EntityUtils;
 
 import javax.net.ssl.SSLContext;
-import java.io.File;
-import java.io.FileInputStream;
+import javax.servlet.http.HttpServletRequest;
+import java.io.*;
 import java.security.KeyStore;
+import java.util.Date;
 import java.util.Map;
 import java.util.Map.Entry;
 
 @SuppressWarnings("unused")
 public class AJAX {
+    public static   String reveive(HttpServletRequest request) throws IOException {
+        BufferedReader streamReader = new BufferedReader( new InputStreamReader(request.getInputStream(), "UTF-8"));
+        StringBuilder responseStrBuilder = new StringBuilder();
+        String inputStr;
+        while ((inputStr = streamReader.readLine()) != null) {
+            responseStrBuilder.append(inputStr);
+        }
+        String string = responseStrBuilder.toString();
+
+        return  string;
+    }
     @SuppressWarnings("WeakerAccess")
     public static Map<String,String> headers;
     private static void _setHeaders(HttpRequestBase requestBase) {
@@ -158,4 +170,5 @@ public class AJAX {
         CloseableHttpResponse response = httpClient.execute(request);
         return EntityUtils.toByteArray(response.getEntity());
     }
+
 }
